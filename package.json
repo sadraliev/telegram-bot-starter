@@ -4,6 +4,7 @@
   "description": "",
   "main": "bot.js",
   "scripts": {
+    "start": "NODE_ENV=production node ./build/api/bot.js",
     "start:dev": "NODE_ENV=development npx nodemon",
     "build": "rimraf ./build && tsc",
     "lint": "eslint . --ext .ts",

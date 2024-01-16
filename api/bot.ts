@@ -1,6 +1,6 @@
 import { Bot } from 'grammy';
-import { initializeBot } from '../config';
-import { getHeroPhrase } from '../bot.service';
+import { getHeroPhrase } from '../app/bot.service';
+import { initializeBot } from '../app/config';
 
 const token = process.env.BOT_TOKEN;
 
