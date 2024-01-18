@@ -1,3 +1,5 @@
+import { Context, NextFunction } from 'grammy';
+
 export const getHeroPhrase = () => {
   const phrases = [
     'Не рой другому яму, пусть сам роет',
@@ -13,3 +15,13 @@ export const getHeroPhrase = () => {
   const randomIndex = Math.floor(Math.random() * phrases.length);
   return phrases[randomIndex];
 };
+
+export async function responseTime(
+  ctx: Context,
+  next: NextFunction
+): Promise<void> {
+  const before = Date.now();
+  await next();
+  const after = Date.now();
+  console.log(`Response time: ${after - before} ms`);
+}
